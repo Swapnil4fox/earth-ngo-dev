@@ -54,4 +54,14 @@ $route['admin'] = 'admin/dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-// Admin Locations
+// front
+
+$route['about-us'] = 'home/about_us';
+$route['campaign'] = 'home/campaign_listing';
+$route['contact-us'] = 'home/contact_us';
+$route['corporate-partnership'] = 'home/corporate_partnership';
+$route['donation'] = 'home/donation';
+$route['events'] = 'home/events_listing';
+$route['gallery'] = 'home/gallery_page';
+$route['sustainable-goals'] = 'home/sustainable_goals';
+$route['volunteer'] = 'home/volunteer_page';

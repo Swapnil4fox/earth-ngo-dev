@@ -5,19 +5,19 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Earth NGO</title>
-      <link rel="icon" href="./images/thumb.png" sizes="32x32">
-      <link rel="stylesheet" href="./css/font-awesome.min.css">
-      <link rel="stylesheet" href="./js/slick-slider/slick.css">
-      <link rel="stylesheet" href="./js/magnific/magnific-popup.css">
-      <link rel="stylesheet" href="./css/init.css">
-      <link rel="stylesheet" href="./css/nstyle.css">
-      <link rel="stylesheet" href="./css/astyle.css">
+      <link rel="icon" href="<?php echo base_url(); ?>front/images/thumb.png" sizes="32x32">
+      <link rel="stylesheet" href="<?php echo base_url(); ?>front/css/font-awesome.min.css">
+      <link rel="stylesheet" href="<?php echo base_url(); ?>front/js/slick-slider/slick.css">
+      <link rel="stylesheet" href="<?php echo base_url(); ?>front/js/magnific/magnific-popup.css">
+      <link rel="stylesheet" href="<?php echo base_url(); ?>front/css/init.css">
+      <link rel="stylesheet" href="<?php echo base_url(); ?>front/css/nstyle.css">
+      <link rel="stylesheet" href="<?php echo base_url(); ?>front/css/astyle.css">
    </head>
    <body>
       <header class="col-100 floatLft flexDisplay justifyCenter deskHeader">
          <div class="header__wrapper">
             <div class="headWrp col-100 floatLft flexDisplay alignCenter justifySpace">
-               <div class="ap__logoDiv floatLft"><a href="index.html"><img src="./images/logo-1.png" alt="Logo" /></a></div>
+               <div class="ap__logoDiv floatLft"><a href="index.html"><img src="<?php echo base_url(); ?>front/images/logo-1.png" alt="Logo" /></a></div>
                <nav class="floatRgt">
                   <ul class="ap__navigation">
                      <li class="ap__navLinks inlineBlk active">
@@ -75,7 +75,7 @@
       </header>
       <div class="headerMob">
          <div class="logoDiv">
-            <a href="index.html"><img src="./images/logo-1.png" alt=""></a>
+            <a href="index.html"><img src="<?php echo base_url(); ?>front/images/logo-1.png" alt=""></a>
          </div>
          <span class="toggle-button">
             <div class="menu-bar menu-bar-top"></div>

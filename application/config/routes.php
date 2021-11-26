@@ -48,19 +48,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
-*/
+ */
 $route['default_controller'] = 'home';
 $route['admin'] = 'admin/dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
 // Admin Locations
-$route['admin/location/country/add'] = 'admin/location/country_add';
-$route['admin/location/country/edit/(:num)'] = 'admin/location/country_edit/$1';
-$route['admin/location/country/del/(:num)'] = 'admin/location/country_del/$1';
-$route['admin/location/state/add'] = 'admin/location/state_add';
-$route['admin/location/state/edit/(:num)'] = 'admin/location/state_edit/$1';
-$route['admin/location/state/del/(:num)'] = 'admin/location/state_del/$1';
-$route['admin/location/city/add'] = 'admin/location/city_add';
-$route['admin/location/city/edit/(:num)'] = 'admin/location/city_edit/$1';
-$route['admin/location/city/del/(:num)'] = 'admin/location/city_del/$1';

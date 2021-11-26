@@ -11,6 +11,7 @@ class About extends My_Controller {
 		$this->rbac->check_module_access();
 
 	}
+gg
 	function index() {
 
 		$page_data['title'] = 'about List';

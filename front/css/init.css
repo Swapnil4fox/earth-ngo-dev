@@ -1,0 +1,57 @@
+*{outline:none;box-sizing:border-box;margin:0;padding:0;}
+input,button{-moz-appearance:none;-webkit-appearance:none;}
+input,button,div,ul,li{outline:none !important;}
+div{box-sizing:border-box;}
+a:link,a:visited{text-decoration:none;}
+img{border:none;outline:none;}
+ul,ul li{list-style-type:none}
+.desktop{display:block;}
+.mobile{display:none;}
+.helperSpan{display:inline-block;vertical-align:middle;width:1px;height:100%;}
+.relative{position:relative;}
+.absolute{position:absolute;}
+.clr{clear:both}
+.floatLft{float:left}
+.floatRgt{float:right}
+.inlineBlk{display:inline-block;vertical-align:middle}
+.table{display:table}
+.transition{transition:all .35s ease 0s;-moz-transition:all .35s ease 0s;-webkit-transition:all .35s ease 0s;}
+.col-100{width:100%}
+.col-90{width:90%}
+.col-80{width:80%}
+.col-70{width:70%}
+.col-60{width:60%}
+.col-50{width:50%}
+.col-40{width:40%}
+.col-30{width:30%}
+.col-20{width:20%}
+.col-10{width:10%}
+.flexDisplay{display:flex;}
+.justifySpace{justify-content:space-between;}
+.justifyStart{justify-content:flex-start;}
+.justifyEnd{justify-content:flex-end;}
+.justifyCenter{justify-content:center;}
+.alignStart{align-items:flex-start;}
+.alignEnd{align-items:flex-end;}
+.alignCenter{align-items:center;}
+.flexWrap{flex-flow:row wrap;}
+.flexColumn{flex-direction:column;}
+.textCenter{text-align:center;}
+.textLeft{text-align:left;}
+.textRight{text-align:right;}
+.ap__Roboto{font-family: 'Roboto', sans-serif;}
+.ap__RobotoSlab{font-family: 'Roboto Slab', serif;}
+.ap__Lato{font-family: 'Lato', sans-serif;}
+.ap__Heebo{font-family: 'Heebo', sans-serif;}
+.ap__fw500{font-weight: 500;}
+.ap__fw600{font-weight: 600;}
+.ap__fw700{font-weight: 700;}
+.ap__fw800{font-weight: 800;}
+.ap__fw900{font-weight: 900;}
+.ap__common__heading{color: #002D12;font-size: 48px;font-family: 'Heebo', sans-serif;font-weight: 700;line-height: 1;}
+.ap__common__heading.orange-color{color: #79b62b;}
+.ap__common__para{font-family: 'Lato', sans-serif;font-size: 16px;color: #646464;}
+.wrapper{max-width: 1180px;display: inline-block;width: 100%;padding: 0 20px;}
+.ap__common_button{border-radius:10px 10px 10px 10px;color: #fff;background-color: #79b62b;transition: all 0.4s ease;padding: 16px 30px;}
+.ap__common_button:hover{background-color: #298d1c;}
+

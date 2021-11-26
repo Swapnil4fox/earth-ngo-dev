@@ -11,8 +11,6 @@ class About extends My_Controller {
 		$this->rbac->check_module_access();
 
 	}
-ghgfhg 
-
 
 	function index() {
 

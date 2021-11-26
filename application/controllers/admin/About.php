@@ -22,7 +22,7 @@ class About extends My_Controller {
 	}
 	function edit() {
 
-		$this->rbac->check_operation_access(); // check opration permission
+		$this->rbac->check_operation_access();
 		$this->load->library('form_validation');
 		$page_data = array();
 		if ($this->input->post('submit')) {

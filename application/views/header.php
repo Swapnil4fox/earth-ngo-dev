@@ -6,13 +6,18 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Earth NGO</title>
       <link rel="icon" href="<?php echo base_url(); ?>front/images/thumb.png" sizes="32x32">
+      <script src="<?php echo base_url(); ?>front/js/jQuery/jquery-3.6.min.js"></script>
       <link rel="stylesheet" href="<?php echo base_url(); ?>front/css/font-awesome.min.css">
       <link rel="stylesheet" href="<?php echo base_url(); ?>front/css/flatpickr.min.css">
       <link rel="stylesheet" href="<?php echo base_url(); ?>front/js/slick-slider/slick.css">
       <link rel="stylesheet" href="<?php echo base_url(); ?>front/js/magnific/magnific-popup.css">
+
       <link rel="stylesheet" href="<?php echo base_url(); ?>front/css/init.css">
       <link rel="stylesheet" href="<?php echo base_url(); ?>front/css/nstyle.css">
       <link rel="stylesheet" href="<?php echo base_url(); ?>front/css/astyle.css">
+      <script type="text/javascript">
+         var base_url ="<?php echo base_url(); ?>"
+      </script>
    </head>
    <body>
       <header class="col-100 floatLft flexDisplay justifyCenter deskHeader">

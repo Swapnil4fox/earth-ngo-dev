@@ -85,6 +85,7 @@ $(document).ready(function(){
 
   }
 
+
   if($('#ap__goalsDetails').length > 0){
     $('#ap__goalsDetails').each(function(){
       $(this).magnificPopup({

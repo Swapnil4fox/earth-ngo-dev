@@ -452,24 +452,3 @@
       </div>
    </div>
 </section>
-<section class="ap__section__8 commonMar col-100 floatLft flexDisplay justifyCenter">
-   <div class="wrapper">
-      <div class="ap__newsLetterWrp col-100 floatLft flexDisplay justifySpace alignCenter flexWrap">
-         <div class="ap__newsLetterHead flexDisplay justifyStart alignCenter">
-            <div class="ap__mailIco"><img src="<?php echo base_url(); ?>front/images/email.png" alt=""></div>
-            <div class="ap__mailTitle">
-               <span>Keep Updated</span>
-               <h2 class="ap__common__heading ap__whtPara">Newsletter</h2>
-            </div>
-         </div>
-         <div class="ap__formSubscribe">
-            <div class="ap__inputDiv">
-               <input type="text" class="ap__textInput col-100 floatLft" placeholder="Email">
-            </div>
-            <div class="ap__buttonDiv">
-               <button><i class="fa fa-paper-plane" aria-hidden="true"></i> SUBSCRIBE</button>
-            </div>
-         </div>
-      </div>
-   </div>
-</section>

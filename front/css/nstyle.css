@@ -220,6 +220,7 @@ textarea::-webkit-input-placeholder{
 }
 
 .np--formBtn--b{
+  cursor: pointer;
   padding:1.25rem 2.5rem 1.25rem 2.5rem;
   font-size: .875rem;
   font-weight: 400;
@@ -746,7 +747,7 @@ img.mfp-img {
   visibility: visible;
   top: 40%;
 }
-
+.error_info{color: red;font-size: 13px;}
 .np__socialDiv a{
   width:42px !important;
   height:42px !important;

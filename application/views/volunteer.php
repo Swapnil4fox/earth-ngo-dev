@@ -148,7 +148,7 @@
                <div class="np-contentSec--rgt col-100 floatLft">
                   <div class="np-contentSec--rgtWrp">
                      <div class="np-contentSec--rgt__contaner col-100 floatLft">
-                        <form class="np-form col-100 floatLft">
+                           <?php echo form_open('class="np-form col-100 floatLft" id="ContactusForm"'); ?>
                            <section class="np-formSec col-100 floatLft">
                               <div class="np-formSec__content col-100 floatLft">
                                  <div class="np-formSec__Wrp col-100 floatLft">
@@ -157,14 +157,16 @@
                                           <div class="np--form__fname ">
                                              <div class="np--form__fnameCont col-50 floatLft">
                                                 <div class="np--form__fnameWrp">
-                                                   <input type="text" class="np--form__fnameInp ap__Lato col-100 floatLft" id="fnameInp" name="np--form__fnameInp" placeholder="First Name " aria-invalid="false">
+                                                   <input type="text" class="textalpha np--form__fnameInp ap__Lato col-100 floatLft" id="volName" name="np--form__fnameInp" placeholder="Name " aria-invalid="false">
+                                                   <span id="volName_validate" class="error_info"></span>
                                                 </div>
                                              </div>
                                           </div>
                                           <div class="np--form__fname">
                                              <div class="np--form__fnameCont col-50 floatLft">
                                                 <div class="np--form__lnameWrp">
-                                                   <input type="text" class="np--form__fnameInp ap__Lato col-100 floatLft" id="lnameInp" name="np--form__fnameInp" placeholder="Phone Number" aria-invalid="false">
+                                                   <input type="text" class="numberOnly np--form__fnameInp ap__Lato col-100 floatLft" id="volPhone" name="np--form__fnameInp" placeholder="Phone Number" aria-invalid="false" maxlength="10" inputmode="numeric" >
+                                                   <span id="volPhone_validate" class="error_info"></span>
                                                 </div>
                                              </div>
                                           </div>
@@ -175,14 +177,16 @@
                                           <div class="np--form__fname ">
                                              <div class="np--form__fnameCont col-50 floatLft">
                                                 <div class="np--form__fnameWrp">
-                                                   <input type="mail" class="np--form__fnameInp ap__Lato col-100 floatLft" id="emailInp" name="np--form__fnameInp" placeholder="Your Email" aria-invalid="false">
+                                                   <input type="mail" class="np--form__fnameInp ap__Lato col-100 floatLft" id="volEmail" name="np--form__fnameInp" placeholder="Your Email" aria-invalid="false">
+                                                   <span id="volEmail_validate" class="error_info"></span>
                                                 </div>
                                              </div>
                                           </div>
                                           <div class="np--form__fname">
                                              <div class="np--form__fnameCont col-50 floatLft">
                                                 <div class="np--form__lnameWrp">
-                                                   <input type="text" class="np--form__fnameInp ap__Lato col-100 floatLft" id="lnameInp" name="np--form__fnameInp" placeholder="Address" aria-invalid="false">
+                                                   <input type="text" class="textalpha np--form__fnameInp ap__Lato col-100 floatLft" id="volAddress" name="np--form__fnameInp" placeholder="Address" aria-invalid="false">
+                                                   <span id="volAddress_validate" class="error_info"></span>
                                                 </div>
                                              </div>
                                           </div>
@@ -194,28 +198,32 @@
                                              <div class="np--form__fnameCont col-50 floatLft">
                                                 <div class="np--form__fnameWrp">
                                                    <input class="np--form__fnameInp ap__Lato  col-100 floatLft" id="myDatePicker" placeholder="Date of Birth">
+                                                   <span id="volbdate_validate" class="error_info"></span>
                                                 </div>
                                              </div>
                                           </div>
                                           <div class="np--form__fname">
                                              <div class="np--form__fnameCont col-50 floatLft">
                                                 <div class="np--form__lnameWrp">
-                                                   <input type="text" class="np--form__fnameInp ap__Lato col-100 floatLft" id="lnameInp" name="np--form__fnameInp" placeholder="Nationality" aria-invalid="false">
+                                                   <input type="text" class="textalpha np--form__fnameInp ap__Lato col-100 floatLft" id="volNationality" name="np--form__fnameInp" placeholder="Nationality" aria-invalid="false">
+                                                   <span id="volNationality_validate" class="error_info"></span>
                                                 </div>
                                              </div>
                                           </div>
                                        </div>
                                     </section>
                                     <div class="np--form__Mail col-100 floatLft">
-                                       <textarea class="np--form__fnameInp col-100 floatLft ap__Lato" id="msgInp" name="np--form__msgInp" placeholder="Your message " cols="10" rows="10" aria-invalid="false"></textarea>
+                                       <textarea class="np--form__fnameInp col-100 floatLft ap__Lato" id="volMessage" name="np--form__msgInp" placeholder="Your message " cols="10" rows="10" aria-invalid="false"></textarea>
+                                       <span id="volMessage_validate" class="error_info"></span>
                                     </div>
+                                    <span id="SuccessMSG"></span>
                                     <div class="np--formBtn col-100 floatLft">
-                                       <button type="submit" class="np--formBtn--b col-100 floatLft" id=""><span>send message </span></button>
+                                       <button type="button" id="volSubmitBtn" class="np--formBtn--b col-100 floatLft" ><span>send message </span></button>
                                     </div>
                                  </div>
                               </div>
                            </section>
-                        </form>
+                        <?php echo form_close(); ?>
                      </div>
                   </div>
                </div>
@@ -223,25 +231,105 @@
          </div>
       </div>
    </section>
-   <section class="ap__section__8 commonMar col-100 floatLft flexDisplay justifyCenter relative">
-      <div class="wrapper">
-         <div class="ap__newsLetterWrp col-100 floatLft flexDisplay justifySpace alignCenter flexWrap">
-            <div class="ap__newsLetterHead flexDisplay justifyStart alignCenter">
-               <div class="ap__mailIco"><img src="<?php echo base_url(); ?>front/images/email.png" alt=""></div>
-               <div class="ap__mailTitle">
-                  <span>Keep Updated</span>
-                  <h2 class="ap__common__heading ap__whtPara">Newsletter</h2>
-               </div>
-            </div>
-            <div class="ap__formSubscribe">
-               <div class="ap__inputDiv">
-                  <input type="text" class="ap__textInput col-100 floatLft" placeholder="Email">
-               </div>
-               <div class="ap__buttonDiv">
-                  <button><i class="fa fa-paper-plane" aria-hidden="true"></i> SUBSCRIBE</button>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
 </main>
+<script type="text/javascript">
+$(document).ready(function() {
+      $("#myDatePicker").flatpickr(
+      {
+        altFormat: "j F, Y",
+        dateFormat: "d-m-Y",
+        disableMobile: "true",
+        "maxDate": new Date().fp_incr(0),
+
+      });
+
+    $('#volSubmitBtn').click(function()
+     {
+
+            var Name            = $("#volName").val();
+            var email_id        = $("#volEmail").val();
+            var mobile_number   = $("#volPhone").val();
+            var Address         = $("#volAddress").val();
+            var Nationality     = $("#volNationality").val();
+            var volMessage         = $("#volMessage").val();
+            var birthdate         = $("#myDatePicker").val();
+
+            if(Name==""){
+                $("#volName_validate").html('Please Enter Name.');
+                registraion_flag=1;
+            }else{
+                registraion_flag=0;
+            }
+            if(email_id=="" && pattern.test(email_id) == false){
+                $("#volEmail_validate").html('Please Enter Email.');
+                registraion_flag = 1;
+            }else{
+                registraion_flag = 0;
+            }
+            if(mobile_number == ""){
+                $("#volPhone_validate").html('Please Enter Phone Number.');
+                registraion_flag=1;
+            }else{
+                registraion_flag = 0;
+            }
+            if(Address==""){
+                $("#volAddress_validate").html('Please Enter Address.');
+                registraion_flag=1;
+            }else{
+                registraion_flag=0;
+            }
+            if(Nationality==""){
+                $("#volNationality_validate").html('Please Enter Nationality.');
+                registraion_flag=1;
+            }else{
+                registraion_flag=0;
+            }
+            if(volMessage==""){
+                $("#volMessage_validate").html('Please Enter Message.');
+                registraion_flag=1;
+            }else{
+                registraion_flag=0;
+            }
+            if(birthdate==""){
+                $("#volbdate_validate").html('Please Select Date.');
+                registraion_flag=1;
+            }else{
+                registraion_flag=0;
+            }
+            if(registraion_flag == 0)
+             {
+                if(Name !='' && email_id!='' && pattern.test(email_id)== true && mobile_number !='' && mobile_number.length >=10 && volMessage !='' && Nationality !='' && Address !='' && birthdate !='' )
+                {
+                    $.ajax({
+
+                        url: base_url +'home/volunteer_form',
+                        type: 'POST',
+                        data: {'Name': Name, 'Address': Address,
+                                    'email_id':email_id,'mobile_number':mobile_number,
+                                    'volMessage':volMessage,
+                                    'Nationality':Nationality,'birthdate':birthdate,
+                                    <?php echo $this->security->get_csrf_token_name() ?>:'<?php echo $this->security->get_csrf_hash() ?>'},
+                        dataType : 'json',
+                        success: function (data)
+                        {
+                            if(data.success=="ok"){
+
+                                $("#SuccessMSG").css({"color": "green", "font-size": "13px","text-align": "center"});
+                                $("#SuccessMSG").html("Thank you for contacting us we will get back to you shortly!!");
+                                $("#SuccessMSG").show();
+                                $("#SuccessMSG").delay(5000).fadeOut();
+                                $("#ContactusForm").trigger("reset");
+                            }else{
+                                $("#SuccessMSG").css({"color": "red", "font-size": "15px", "font-weight": "800", "margin-top": "10px","text-align": "center"});
+                                $("#SuccessMSG").html("Something went wrong ,please try again!");
+                                $("#SuccessMSG").show();
+                                $("#SuccessMSG").delay(5000).fadeOut();
+
+                            }
+                        }
+                    });
+                }
+            }
+    });
+});
+</script>

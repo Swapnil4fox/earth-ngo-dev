@@ -1,3 +1,26 @@
+<?php if ($this->uri->segment(1) != 'campaign' && $this->uri->segment(1) != 'events') {?>
+<section class="ap__section__8 commonMar col-100 floatLft flexDisplay justifyCenter">
+   <div class="wrapper">
+      <div class="ap__newsLetterWrp col-100 floatLft flexDisplay justifySpace alignCenter flexWrap">
+         <div class="ap__newsLetterHead flexDisplay justifyStart alignCenter">
+            <div class="ap__mailIco"><img src="<?php echo base_url(); ?>front/images/email.png" alt=""></div>
+            <div class="ap__mailTitle">
+               <span>Keep Updated</span>
+               <h2 class="ap__common__heading ap__whtPara">Newsletter</h2>
+            </div>
+         </div>
+         <div class="ap__formSubscribe">
+            <div class="ap__inputDiv">
+               <input type="text" class="ap__textInput col-100 floatLft" placeholder="Email">
+            </div>
+            <div class="ap__buttonDiv">
+               <button><i class="fa fa-paper-plane" aria-hidden="true"></i> SUBSCRIBE</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<?php }?>
 <footer class="col-100 floatLft flexDisplay justifyCenter">
    <div class="wrapper">
       <div class="ap__footInner col-100 floatLft flexDisplay justifySpace alignStart flexWrap">
@@ -48,10 +71,13 @@
       </div>
    </div>
 </footer>
-<script src="<?php echo base_url(); ?>front/js/jQuery/jquery-3.6.min.js"></script>
+
 <script src="<?php echo base_url(); ?>front/js/slick-slider/slick.min.js"></script>
 <script src="<?php echo base_url(); ?>front/js/flatpickr.min.js"></script>
+<?php if ($this->uri->segment(1) != 'volunteer') {?>
 <script src="<?php echo base_url(); ?>front/js/magnific/jquery.magnific-popup.min.js"></script>
+<?php }?>
+<script src="<?php echo base_url(); ?>front/js/swapnil.inc.js"></script>
 <script src="<?php echo base_url(); ?>front/js/site.ap.js"></script>
  <script src="<?php echo base_url(); ?>front/js/site.np.js"></script>
 </body>

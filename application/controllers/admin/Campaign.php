@@ -88,7 +88,7 @@ class Campaign extends My_Controller {
 						$_POST['campaigndetailImage'] = $_POST['old_campaigndetailImage'];
 						$data['error'] = $this->upload->display_errors();
 					}
-					$seoUri = makeSeoUri($this->input->post('eventName'));
+					$seoUri = makeSeoUri($this->input->post('campaignName'));
 					$params = array(
 
 						'seoUri' => $seoUri,

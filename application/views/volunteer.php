@@ -20,7 +20,9 @@
                   </div>
                   <div class="np-gallary__tabContant col-100 floatLft current" id="all">
                      <ul class="np-gallary__tabContant--list  col-100 floatLft">
-                        <li>
+                        <?php echo makeVolunteertabing(); ?>
+
+                        <!-- <li>
                            <div class="image-vContent col-100 floatLft ">
                               <div class="image-vContentImg  relative">
                                  <img src="<?php echo base_url(); ?>front/images/np-img/XPGQWPN.jpg" alt="">
@@ -115,7 +117,7 @@
                                  <p>Volunteer</p>
                               </div>
                            </div>
-                        </li>
+                        </li> -->
                      </ul>
                   </div>
                </div>

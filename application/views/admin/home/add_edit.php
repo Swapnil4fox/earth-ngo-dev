@@ -82,17 +82,17 @@ $(document).ready(function(e) {
                <?php $this->load->view('admin/includes/_messages.php')?>
                <?php echo form_open_multipart(base_url('admin/banner/add_edit'), 'class="form-horizontal"'); ?>
                <div class="form-group">
-                  <label for="title"><?=trans('title')?></label>
+                  <label for="title"><span class="text-danger">*</span><?=trans('title')?></label>
                   <input type="text" autocomplete="off" name="bannerTitle" class="form-control" id="bannerTitle" value="<?php echo isset($Fetch_data['bannerTitle']) ? set_value("bannerTitle", $Fetch_data['bannerTitle']) : set_value("bannerTitle"); ?>" placeholder="">
                   <input type="hidden" name="bannerID" id="bannerID" value="<?php echo isset($Fetch_data['bannerID']) ? set_value("bannerID", $Fetch_data['bannerID']) : set_value("bannerID"); ?>">
                </div>
                <div class="form-group">
-                  <label for="description">Description</label>
+                  <label for="description"><span class="text-danger">*</span>Description</label>
                   <textarea name="bannerDesc" id="bannerDesc"><?php echo isset($Fetch_data['bannerDesc']) ? set_value("bannerDesc", $Fetch_data['bannerDesc']) : set_value("bannerDesc"); ?></textarea>
                   <span id="pageSynopsis_validate" class="text-danger"></span>
                </div>
                <div class="form-group">
-                  <label for="bannerMobImage">Mobile Banner </label>
+                  <label for="bannerMobImage"><span class="text-danger">*</span>Mobile Banner </label>
                   <input type="file" class="form-control" id="bannerMobImage" name="bannerMobImage" placeholder="Fetch_data Image" value="<?php echo !empty($Fetch_data['bannerMobImage']) ? $Fetch_data['bannerMobImage'] : ''; ?>" />
                   <input type="hidden" name="old_bannerMobImage" id="old_bannerMobImage" value="<?php echo isset($Fetch_data['bannerMobImage']) ? $Fetch_data['bannerMobImage'] : ''; ?>" />
                   <p class="text-danger" id="bannerMobImage_validate"></p>
@@ -102,7 +102,7 @@ $(document).ready(function(e) {
                   <span class="text-danger"><?php echo form_error('bannerMobImage'); ?></span>
                </div>
                <div class="form-group">
-                  <label for="bannerMobImage">Desktop Banner </label>
+                  <label for="bannerMobImage"><span class="text-danger">*</span>Desktop Banner </label>
                   <input type="file" class="form-control" id="bannerDeskImage" name="bannerDeskImage" placeholder="Fetch_data Image" value="<?php echo !empty($Fetch_data['bannerDeskImage']) ? $Fetch_data['bannerDeskImage'] : ''; ?>" />
                   <input type="hidden" name="old_bannerDeskImage" id="old_bannerDeskImage" value="<?php echo isset($Fetch_data['bannerDeskImage']) ? $Fetch_data['bannerDeskImage'] : ''; ?>" />
                   <p class="text-danger" id="bannerDeskImage_validate"></p>

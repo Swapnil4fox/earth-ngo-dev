@@ -32,6 +32,9 @@
                         <li>
                            <a rel="education" href="javascript:;">EDUCATION</a>
                         </li>
+                        <li>
+                           <a rel="test" href="javascript:;">Test</a>
+                        </li>
                      </ul>
                   </div>
                </div>
@@ -128,98 +131,9 @@
                   </li>
                </ul>
             </div>
-            <div class="np-gallary__tabContant col-100 floatLft" id="advocation">
-               <ul class="np-gallary__tabContant--list  col-100 floatLft">
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/group-of-school-children-with-teacher-on-field-trip-in-nature.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/group-of-school-children-with-teacher-on-field-trip-in-nature.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/support-in-color.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/support-in-color.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/children-and-education-teacher-reading-book-to-young-students.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/children-and-education-teacher-reading-book-to-young-students.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/woman-speaking-the-speech.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/woman-speaking-the-speech.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/young-volunteers-planting-trees-in-green-park-together.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/young-volunteers-planting-trees-in-green-park-together.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a href="<?php echo base_url(); ?>front/images/np-img/young-volunteers-with-green-recycling-boxes-for-trash-standing-in-park.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/young-volunteers-with-green-recycling-boxes-for-trash-standing-in-park.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-               </ul>
-            </div>
-            <div class="np-gallary__tabContant col-100 floatLft" id="education">
-               <ul class="np-gallary__tabContant--list  col-100 floatLft">
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/children-and-education-teacher-reading-book-to-young-students.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/children-and-education-teacher-reading-book-to-young-students.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/support-in-color.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/support-in-color.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/woman-speaking-the-speech.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/woman-speaking-the-speech.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/young-volunteers-planting-trees-in-green-park-together.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/young-volunteers-planting-trees-in-green-park-together.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/group-of-school-children-with-teacher-on-field-trip-in-nature.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/group-of-school-children-with-teacher-on-field-trip-in-nature.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a href="<?php echo base_url(); ?>front/images/np-img/young-volunteers-with-green-recycling-boxes-for-trash-standing-in-park.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/young-volunteers-with-green-recycling-boxes-for-trash-standing-in-park.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-               </ul>
-            </div>
+
+
+
          </div>
       </div>
    </section>

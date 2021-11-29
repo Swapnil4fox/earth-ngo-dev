@@ -367,5 +367,13 @@ class Gallery extends My_Controller {
 		echo json_encode(array('status' => 'ok'));
 		exit();
 	}
+	public function delete_galleryimage() {
+
+		$this->db->delete('fx_gallery_images', array('gallaryImageID ' => $this->input->post('id')));
+		unlink("uploads/gallery/" . $this->input->post('image'));
+		$this->session->set_flashdata('success', 'Image Deleted successfully!');
+		echo json_encode(array('status' => 'ok'));
+		exit();
+	}
 
 }

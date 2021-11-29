@@ -94,7 +94,7 @@ $(document).ready(function(e) {
                   <span class="text-danger"><?php echo form_error('teamDesignation'); ?></span>
                </div>
                <div class="form-group">
-                  <label for="teamThumbImage"><span class="text-danger">*</span>Image</label>
+                  <label for="teamThumbImage"><span class="text-danger">*</span>Image <span class="text-danger">Image Dimension: 755 × 755 px</span></label>
                   <input type="file" class="form-control" id="teamThumbImage" name="teamThumbImage" placeholder="Fetch_data Image" value="<?php echo !empty($Fetch_data['teamThumbImage']) ? $Fetch_data['teamThumbImage'] : ''; ?>" />
                   <input type="hidden" name="old_teamThumbImage" id="old_teamThumbImage" value="<?php echo isset($Fetch_data['teamThumbImage']) ? $Fetch_data['teamThumbImage'] : ''; ?>" />
                   <p class="text-danger" id="teamThumbImage_validate"></p>

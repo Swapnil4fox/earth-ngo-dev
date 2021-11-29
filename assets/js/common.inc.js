@@ -1,5 +1,92 @@
 var _URL = window.URL || window.webkitURL;
+     $("#goalsdetailImage").change(function(){
 
+      var file = this.files[0];
+      var size = $('#goalsdetailImage')[0].files[0].size;
+      var file_size_in_MB = size / Math.pow(1024,2);
+      var validImageTypes = ["image/gif", "image/jpeg", "image/png"];
+      $("#image_name_lable").text(file);
+      var ext = $('#goalsdetailImage').val().split('.').pop().toLowerCase()
+      if($.inArray(ext, ['jpg','jpeg','png']) == -1)
+      {
+
+          $("#goalsdetailImage_validate").html('Please select valid file. Only JPG, PNG and JPEG are allowed.');
+          $('#goalsdetailImage').val('');
+
+      }
+     else if(file_size_in_MB>2)
+      {
+
+          $("#goalsdetailImage_validate").html('Please select file of size less than 2MB.');
+          $('#goalsdetailImage').val('');
+
+      }
+      else{
+
+          var img = new Image();
+
+          img.onload = function() {
+              if (this.width == 1024 && this.height==1024)
+              {
+                 $("#goalsdetailImage_validate").html('');
+
+              }else{
+                   $("#goalsdetailImage_validate").html('Detail image dimension should be 1024 × 1024 px.');
+
+                   $('#goalsdetailImage').val('');
+              }
+
+          };
+
+            img.src = _URL.createObjectURL(file);
+
+      }
+
+   });
+   $("#goalsThumbImage").change(function(){
+
+      var file = this.files[0];
+      var size = $('#goalsThumbImage')[0].files[0].size;
+      var file_size_in_MB = size / Math.pow(1024,2);
+      var validImageTypes = ["image/gif", "image/jpeg", "image/png"];
+      $("#image_name_lable").text(file);
+      var ext = $('#goalsThumbImage').val().split('.').pop().toLowerCase()
+      if($.inArray(ext, ['jpg','jpeg','png']) == -1)
+      {
+
+          $("#goalsThumbImage_validate").html('Please select valid file. Only JPG, PNG and JPEG are allowed.');
+          $('#goalsThumbImage').val('');
+
+      }
+     else if(file_size_in_MB>2)
+      {
+
+          $("#goalsThumbImage_validate").html('Please select file of size less than 2MB.');
+          $('#goalsThumbImage').val('');
+
+      }
+      else{
+
+          var img = new Image();
+
+          img.onload = function() {
+              if (this.width == 148 && this.height==148)
+              {
+                 $("#goalsThumbImage_validate").html('');
+
+              }else{
+                   $("#goalsThumbImage_validate").html('Thumbnail image dimension should be 148 × 148 px.');
+
+                   $('#goalsThumbImage').val('');
+              }
+
+          };
+
+            img.src = _URL.createObjectURL(file);
+
+      }
+
+   });
    $("#eventdetailImage").change(function(){
 
       var file = this.files[0];
@@ -120,7 +207,7 @@ var _URL = window.URL || window.webkitURL;
                  $("#teamThumbImage_validate").html('');
 
               }else{
-                   $("#teamThumbImage_validate").html('Image Dimension 755 × 755 px.');
+                   $("#teamThumbImage_validate").html('Image dimension should be 755 × 755 px.');
 
                    $('#teamThumbImage').val('');
               }
@@ -160,7 +247,7 @@ var _URL = window.URL || window.webkitURL;
               {
                  $("#bannerMobImage_validate").html('');
               }else{
-                   $("#bannerMobImage_validate").html('Mobile Image Dimension 768 × 1300 px.');
+                   $("#bannerMobImage_validate").html('Mobile dimension should be 768 × 1300 px.');
                    $('#bannerMobImage').val('');
               }
           };
@@ -196,7 +283,7 @@ var _URL = window.URL || window.webkitURL;
               {
                  $("#bannerDeskImage_validate").html('');
               }else{
-                   $("#bannerDeskImage_validate").html('Desktop Image Dimension 1920 × 720 px.');
+                   $("#bannerDeskImage_validate").html('Desktop dimension should be 1920 × 720 px.');
                    $('#bannerDeskImage').val('');
               }
           };
@@ -233,7 +320,7 @@ var _URL = window.URL || window.webkitURL;
               {
                  $("#volThumbImage_validate").html('');
               }else{
-                   $("#volThumbImage_validate").html('Image Dimension 900 × 1000 px.');
+                   $("#volThumbImage_validate").html('Image dimension should be 900 × 1000 px.');
                    $('#volThumbImage').val('');
               }
           };
@@ -270,7 +357,7 @@ var _URL = window.URL || window.webkitURL;
               {
                  $("#aboutMissionImg_validate").html('');
               }else{
-                   $("#aboutMissionImg_validate").html('Image Dimension 768 × 448 px.');
+                   $("#aboutMissionImg_validate").html('Image dimension should be 768 × 448 px.');
                    $('#aboutMissionImg').val('');
               }
           };
@@ -307,7 +394,7 @@ var _URL = window.URL || window.webkitURL;
               {
                  $("#aboutVisionImg_validate").html('');
               }else{
-                   $("#aboutVisionImg_validate").html('Vision Image Dimension 768 × 448 px.');
+                   $("#aboutVisionImg_validate").html('Vision dimension should be 768 × 448 px.');
                    $('#aboutVisionImg').val('');
               }
           };
@@ -341,7 +428,7 @@ var _URL = window.URL || window.webkitURL;
               {
                  $("#icon1Image_validate").html('');
               }else{
-                   $("#icon1Image_validate").html('Icon 1 Image Dimension  64 × 64 px.');
+                   $("#icon1Image_validate").html('Icon 1 dimension should be  64 × 64 px.');
                    $('#icon1Image').val('');
               }
           };
@@ -375,7 +462,7 @@ var _URL = window.URL || window.webkitURL;
               {
                  $("#icon2Image_validate").html('');
               }else{
-                   $("#icon2Image_validate").html('Icon 2 Image Dimension  64 × 64 px.');
+                   $("#icon2Image_validate").html('Icon 2 dimension should be  64 × 64 px.');
                    $('#icon2Image').val('');
               }
           };
@@ -409,7 +496,7 @@ var _URL = window.URL || window.webkitURL;
               {
                  $("#icon3Image_validate").html('');
               }else{
-                   $("#icon3Image_validate").html('Icon 3 Image Dimension  64 × 64 px.');
+                   $("#icon3Image_validate").html('Icon 3 dimension should be  64 × 64 px.');
                    $('#icon3Image').val('');
               }
           };
@@ -443,7 +530,7 @@ var _URL = window.URL || window.webkitURL;
               {
                  $("#section2Image_validate").html('');
               }else{
-                   $("#section2Image_validate").html('Image Dimension  1335 × 1610 px');
+                   $("#section2Image_validate").html('Image dimension should be 1335 × 1610 px');
                    $('#section2Image').val('');
               }
           };
@@ -477,7 +564,7 @@ var _URL = window.URL || window.webkitURL;
               {
                  $("#galleryImg_validate").html('');
               }else{
-                   $("#galleryImg_validate").html('Image Dimension 2000 × 1335 px');
+                   $("#galleryImg_validate").html('Image dimension should be 2000 × 1335 px');
                    $('#galleryImg').val('');
               }
           };
@@ -527,7 +614,7 @@ var _URL = window.URL || window.webkitURL;
                      {
                         $("#campaignFile_validate_gallery").html('');
                      }else{
-                          $("#campaignFile_validate_gallery").html('Image Dimension 861 × 1290 px.');
+                          $("#campaignFile_validate_gallery").html('Image dimension should be 861 × 1290 px.');
                           $('#propertyImg').val('');
                      }
 

@@ -97,7 +97,7 @@ $(document).ready(function(e) {
                   <textarea name="goalsShortDesc" id="goalsShortDesc"><?php echo isset($Fetch_data['goalsShortDesc']) ? set_value("goalsShortDesc", $Fetch_data['goalsShortDesc']) : set_value("goalsShortDesc"); ?></textarea>
                </div>
                <div class="form-group">
-                  <label for="goalsThumbImage"><span class="text-danger">*</span>Thumbnail Image</label>
+                  <label for="goalsThumbImage"><span class="text-danger">*</span>Thumbnail Image <span class="text-danger">Image Dimension : 148 x 148 px</span></label>
                   <input type="file" class="form-control" id="goalsThumbImage" name="goalsThumbImage" placeholder="Fetch_data Image" value="<?php echo !empty($Fetch_data['goalsThumbImage']) ? $Fetch_data['goalsThumbImage'] : ''; ?>" />
                   <input type="hidden" name="old_goalsThumbImage" id="old_goalsThumbImage" value="<?php echo isset($Fetch_data['goalsThumbImage']) ? $Fetch_data['goalsThumbImage'] : ''; ?>" />
                   <p class="text-danger" id="goalsThumbImage_validate"></p>
@@ -107,7 +107,7 @@ $(document).ready(function(e) {
                   <span class="text-danger"><?php echo form_error('goalsdetailImage'); ?></span>
                </div>
                <div class="form-group">
-                  <label for="goalsdetailImage"><span class="text-danger">*</span>Detail Image</label>
+                  <label for="goalsdetailImage"><span class="text-danger">*</span>Detail Image <span class="text-danger">Image Dimension : 1024 x 1024 px</span></label>
                   <input type="file" class="form-control" id="goalsdetailImage" name="goalsdetailImage" placeholder="Fetch_data Image" value="<?php echo !empty($Fetch_data['goalsdetailImage']) ? $Fetch_data['goalsdetailImage'] : ''; ?>" />
                   <input type="hidden" name="old_goalsdetailImage" id="old_goalsdetailImage" value="<?php echo isset($Fetch_data['goalsdetailImage']) ? $Fetch_data['goalsdetailImage'] : ''; ?>" />
                   <p class="text-danger" id="goalsdetailImage_validate"></p>
@@ -130,11 +130,5 @@ $(document).ready(function(e) {
         CKEDITOR.replace('goalsShortDesc', {
                  allowedContent : true,
               });
-        CKEDITOR.replace('goalsLongDesc', {
-        allowedContent : true,
-        filebrowserUploadUrl: "<?php echo base_url() ?>upload.php",
-        // filebrowserUploadUrl: "upload.php",
-        filebrowserUploadMethod : "form"
-    });
     });
 </script>

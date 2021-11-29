@@ -21,7 +21,14 @@ class Volunteer extends My_Controller {
 		$this->load->view('admin/volunteer/list', $data);
 		$this->load->view('admin/includes/_footer');
 	}
+	public function volunteer_form_list() {
 
+		$data['info'] = $this->Common_model->getRecords('fx_volunteer_form', array('status' => 0));
+
+		$this->load->view('admin/includes/_header');
+		$this->load->view('admin/volunteer/volunteer_list', $data);
+		$this->load->view('admin/includes/_footer');
+	}
 	function add_edit() {
 
 		//$this->rbac->check_operation_access(); // check opration permission

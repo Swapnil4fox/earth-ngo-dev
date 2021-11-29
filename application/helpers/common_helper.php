@@ -535,3 +535,145 @@ function makeSeoUri($courseTitle) {
 	return $seoUri;
 
 }
+function makeVolunteertabing() {
+	$htmlContent = '';
+	$data = array();
+	$CI = get_instance();
+	$CI->load->model('Common_model');
+	$voluntterData = $CI->Common_model->getRecords('fx_volunteer', array('status' => 0));
+
+	if (Count($voluntterData) > 0) {
+		$cnt = 0;
+		foreach ($voluntterData as $key => $value) {
+			$htmlContent .= '<li>
+                           <div class="image-vContent col-100 floatLft ">
+                              <div class="image-vContentImg  relative">
+                                 <img src="' . base_url() . 'uploads/volunteer/' . $value['volThumbImage'] . '" alt="">
+                                 <div class="ap__socialDiv np__socialDiv col-100 floatLft absolute">
+                                    <a href="' . $value['volunteerFbLink'] . '" target="blank"><i class="fa fa-facebook-f"></i></a>
+                                    <a href="' . $value['volunteerInstaLink'] . '" target="blank"><i class="fa fa-instagram" aria-hidden="true"></i>
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="image-popupDisc col-100 floatLft textCenter">
+                                 <h2 class="vTitle">' . $value['volunteerName'] . '</h2>
+                                 <p>' . $value['volunteerDesignation'] . '</p>
+                              </div>
+                           </div>
+                        </li>';
+			$cnt++;
+		}
+		$status = 'success';
+		$data['content'] = $htmlContent;
+		$data['count'] = $cnt;
+
+	} else {
+		$status = 'error';
+		$htmlContent = '<li class="messageList">No volunteer Available</li>';
+	}
+	$data['status'] = $status;
+	$data['content'] = $htmlContent;
+	return $htmlContent;
+}
+
+function goalsHomeSlider() {
+	$htmlContent = '';
+	$data = array();
+	$CI = get_instance();
+	$CI->load->model('Common_model');
+	$goalData = $CI->Common_model->getRecords('fx_goals', array('status' => 0), '', array('goalsNumber' => 'ASC'));
+
+	if (Count($goalData) > 0) {
+		$cnt = 0;
+		foreach ($goalData as $key => $value) {
+			$htmlContent .= '  <li>
+            <div class="ap__goalWrp col-100 floatLft">
+               <img src="' . base_url() . 'uploads/goals/' . $value['goalsThumbImage'] . '" alt="">
+               <div class="ap__goalContents absolute animated animatedFadeInUp fadeInUp">
+                  <a href="' . base_url('sustainable-goals') . '">
+                     <h2 class="ap__goalTitle">Read More</h2>
+                  </a>
+               </div>
+            </div>
+         </li>';
+			$cnt++;
+		}
+		$status = 'success';
+		$data['content'] = $htmlContent;
+		$data['count'] = $cnt;
+
+	} else {
+		$status = 'error';
+		$htmlContent = '<li class="messageList">No Goal Available</li>';
+	}
+	$data['status'] = $status;
+	$data['content'] = $htmlContent;
+	return $htmlContent;
+}
+
+function TeamHomePageSlider() {
+	$htmlContent = '';
+	$data = array();
+	$CI = get_instance();
+	$CI->load->model('Common_model');
+	$teamData = $CI->Common_model->getRecords('fx_team', array('status' => 0));
+
+	if (Count($teamData) > 0) {
+		$cnt = 0;
+		foreach ($teamData as $key => $value) {
+			$htmlContent .= '<li class="ap__teamCardWrp">
+            <div class="ap__teamCard col-100 floatLft textCenter">
+               <div class="ap__teamImage"><img src="' . base_url() . 'uploads/team/' . $value['teamThumbImage'] . '" alt=""></div>
+               <div class="ap__teamName">' . $value['teamName'] . '</div>
+               <span class="ap__teamPosition">' . $value['teamDesignation'] . '</span>
+            </div>
+         </li>';
+			$cnt++;
+		}
+		$status = 'success';
+		$data['content'] = $htmlContent;
+		$data['count'] = $cnt;
+
+	} else {
+		$status = 'error';
+		$htmlContent = '<li class="messageList">No Goal Available</li>';
+	}
+	$data['status'] = $status;
+	$data['content'] = $htmlContent;
+	return $htmlContent;
+}
+
+function CampaignHomePageSlider() {
+	$htmlContent = '';
+	$data = array();
+	$CI = get_instance();
+	$CI->load->model('Common_model');
+	$campaignData = $CI->Common_model->getRecords('fx_campaign', array('status' => 0));
+
+	if (Count($campaignData) > 0) {
+		$cnt = 0;
+		foreach ($campaignData as $key => $value) {
+			$htmlContent .= '<li>
+            <div class="ap__campaignWrp ap__camp__1 col-100 floatLft flexDisplay flexColumn textLeft">
+               <div class="ap__innerSpace col-100 floatLft"></div>
+               <div class="ap__campaignData floatLft">
+                  <h2 class="ap__campaignHead ap__common__heading">' . $value['campaignName'] . '</h2>
+                  <p class="ap__common__para">' . strip_tags($value['campaignshortDesc']) . '</p>
+                  <a href="' . base_url() . 'campaign/' . $value['seoUri'] . '" class="ap__takeAction">TAKE ACTION<span><img src="<?php echo base_url(); ?> /uploads/campaign/' . $value['campaignThumbImage'] . '" alt=""></span></a>
+               </div>
+            </div>
+         </li>';
+			$cnt++;
+		}
+		$status = 'success';
+		$data['content'] = $htmlContent;
+		$data['count'] = $cnt;
+
+	} else {
+		$status = 'error';
+		$htmlContent = '<li class="messageList">No Goal Available</li>';
+	}
+	$data['status'] = $status;
+	$data['content'] = $htmlContent;
+	return $htmlContent;
+}

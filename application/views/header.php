@@ -26,37 +26,37 @@
                <div class="ap__logoDiv floatLft"><a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>front/images/logo-1.png" alt="Logo" /></a></div>
                <nav class="floatRgt">
                   <ul class="ap__navigation">
-                     <li class="ap__navLinks inlineBlk active">
+                     <li class="ap__navLinks inlineBlk <?=($this->uri->segment(1) == '') ? 'active' : ''?>">
                         <a href="<?php echo base_url(); ?>" class="ap__navClick">Home</a>
                      </li>
-                     <li class="ap__navLinks inlineBlk ">
+                     <li class="ap__navLinks inlineBlk <?=($this->uri->segment(1) == 'about-us') ? 'active' : ''?>">
                         <a href="<?php echo base_url('about-us'); ?>" class="ap__navClick">About us</a>
                      </li>
-                     <li class="ap__navLinks ap__dropParent inlineBlk relative">
+                     <li class="ap__navLinks ap__dropParent inlineBlk relative <?=($this->uri->segment(1) == 'events') ? 'active' : ''?>">
                         <a href="<?php echo base_url('events'); ?>" class="ap__navClick">
                         Events
                         </a>
                      </li>
-                     <li class="ap__navLinks ap__dropParent inlineBlk relative">
+                     <li class="ap__navLinks ap__dropParent inlineBlk relative <?=($this->uri->segment(1) == 'campaign') ? 'active' : ''?>">
                         <a href="<?php echo base_url('campaign'); ?>" class="ap__navClick">
                         Campaign</a>
                      </li>
-                     <li class="ap__navLinks inlineBlk ">
+                     <li class="ap__navLinks inlineBlk <?=($this->uri->segment(1) == 'gallery') ? 'active' : ''?>">
                         <a href="<?php echo base_url('gallery'); ?>" class="ap__navClick">Gallery</a>
                      </li>
-                     <li class="ap__navLinks inlineBlk">
+                     <li class="ap__navLinks inlineBlk <?=($this->uri->segment(1) == 'volunteer') ? 'active' : ''?>">
                         <a href="<?php echo base_url('volunteer'); ?>" class="ap__navClick">Volunteer</a>
                      </li>
-                     <li class="ap__navLinks inlineBlk">
+                     <li class="ap__navLinks inlineBlk <?=($this->uri->segment(1) == 'corporate-partnership') ? 'active' : ''?>">
                         <a href="<?php echo base_url('corporate-partnership'); ?>" class="ap__navClick">Corporate partnership</a>
                      </li>
-                     <li class="ap__navLinks inlineBlk">
+                     <li class="ap__navLinks inlineBlk <?=($this->uri->segment(1) == 'sustainable-goals') ? 'active' : ''?>">
                         <a href="<?php echo base_url('sustainable-goals'); ?>" class="ap__navClick">Sustainable Goals</a>
                      </li>
-                     <li class="ap__navLinks inlineBlk">
+                     <li class="ap__navLinks inlineBlk <?=($this->uri->segment(1) == 'contact-us') ? 'active' : ''?>">
                         <a href="<?php echo base_url('contact-us'); ?>" class="ap__navClick">Contact us</a>
                      </li>
-                     <li class="ap__navLinks inlineBlk">
+                     <li class="ap__navLinks inlineBlk ">
                         <a href="<?php echo base_url('donation'); ?>" class="ap__navClick ap__navButton">Donation</a>
                      </li>
                   </ul>

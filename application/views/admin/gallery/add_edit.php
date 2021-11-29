@@ -75,7 +75,7 @@ $('.delete_imaage').on('click',function(){
      var imgName = $(this).attr('rel');
      var propertyID = $(this).attr('data-id');
     $.ajax({
-         url:base_url +'admin/gallery/delete_image',
+         url:base_url +'admin/gallery/delete_galleryimage',
           method: 'POST',
           data: {'image': imgName, 'id': propertyID,<?php echo $this->security->get_csrf_token_name() ?>:'<?php echo $this->security->get_csrf_hash() ?>'},
           dataType: 'json',

@@ -63,6 +63,7 @@ class Home extends CI_Controller {
 		$this->load->view('footer.php');
 	}
 	public function sustainable_goals() {
+
 		$this->load->view('header.php');
 		$this->load->view('sustain-goals.php');
 		$this->load->view('footer.php');

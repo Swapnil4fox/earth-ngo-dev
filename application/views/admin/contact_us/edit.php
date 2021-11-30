@@ -80,10 +80,6 @@ $(document).ready(function(e) {
                   <textarea name="contact_pageDesc" id="contact_pageDesc"><?php echo isset($Fetch_data['contact_pageDesc']) ? set_value("contact_pageDesc", $Fetch_data['contact_pageDesc']) : set_value("contact_pageDesc"); ?></textarea>
                </div>
                <div class="form-group">
-                  <label for="Name"><span class="text-danger">*</span>Address</label>
-                  <textarea name="contact_pageAddress" id="contact_pageAddress"><?php echo isset($Fetch_data['contact_pageAddress']) ? set_value("contact_pageAddress", $Fetch_data['contact_pageAddress']) : set_value("contact_pageAddress"); ?></textarea>
-               </div>
-               <div class="form-group">
                   <label for="Name"><span class="text-danger">*</span>Phone</label>
                   <input type="text" autocomplete="off"  name="contact_pagePhone" class="form-control" id="contact_pagePhone" value="<?php echo isset($Fetch_data['contact_pagePhone']) ? set_value("contact_pagePhone", $Fetch_data['contact_pagePhone']) : set_value("contact_pagePhone"); ?>" placeholder="">
                    <input type="hidden" name="contact_pageID" id="contact_pageID" value="<?php echo isset($Fetch_data['contact_pageID']) ? set_value("contact_pageID", $Fetch_data['contact_pageID']) : set_value("contact_pageID"); ?>">
@@ -103,9 +99,6 @@ $(document).ready(function(e) {
 <script>
     $(document).ready(function() {
        CKEDITOR.replace('contact_pageDesc', {
-                 allowedContent : true,
-              });
-       CKEDITOR.replace('contact_pageAddress', {
                  allowedContent : true,
               });
     });

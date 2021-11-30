@@ -18,7 +18,8 @@
          </div>
       </div>
       <ul class="ap__campaignListing ap__campaignPage col-100 floatLft flexDisplay justifySpace alignStart flexWrap">
-         <li>
+          <?php echo campaignPagelisting(); ?>
+        <!--  <li>
             <div class="ap__campaignWrp ap__camp__1 col-100 floatLft flexDisplay flexColumn textLeft">
                <div class="ap__innerSpace col-100 floatLft"></div>
                <div class="ap__campaignData floatLft">
@@ -137,7 +138,7 @@
                   <a href="campaign-details.html" class="ap__takeAction">TAKE ACTION <span><img src="<?php echo base_url(); ?>front/images/right-arrow-action.png" alt=""></span></a>
                </div>
             </div>
-         </li>
+         </li> -->
       </ul>
    </div>
 </section>

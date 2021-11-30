@@ -47,8 +47,8 @@
                      <li class="ap__navLinks inlineBlk <?=($this->uri->segment(1) == 'volunteer') ? 'active' : ''?>">
                         <a href="<?php echo base_url('volunteer'); ?>" class="ap__navClick">Volunteer</a>
                      </li>
-                     <li class="ap__navLinks inlineBlk <?=($this->uri->segment(1) == 'corporate-partnership') ? 'active' : ''?>">
-                        <a href="<?php echo base_url('corporate-partnership'); ?>" class="ap__navClick">Corporate partnership</a>
+                     <li class="ap__navLinks inlineBlk <?=($this->uri->segment(1) == 'partnership') ? 'active' : ''?>">
+                        <a href="<?php echo base_url('partnership'); ?>" class="ap__navClick">Partnership</a>
                      </li>
                      <li class="ap__navLinks inlineBlk <?=($this->uri->segment(1) == 'sustainable-goals') ? 'active' : ''?>">
                         <a href="<?php echo base_url('sustainable-goals'); ?>" class="ap__navClick">Sustainable Goals</a>
@@ -100,7 +100,7 @@
                         <a href="<?php echo base_url('volunteer'); ?>" class="ap__navClick">Volunteer</a>
                      </li>
                      <li class="ap__navLinks inlineBlk mainDrop">
-                        <a href="<?php echo base_url('corporate-partnership'); ?>" class="ap__navClick">Corporate partnership</a>
+                        <a href="<?php echo base_url('partnership'); ?>" class="ap__navClick">Partnership</a>
                      </li>
                      <li class="ap__navLinks inlineBlk mainDrop ">
                         <a href="<?php echo base_url('sustainable-goals'); ?>" class="ap__navClick ">Sustainable Goals</a>

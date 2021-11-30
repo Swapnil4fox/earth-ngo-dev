@@ -53,7 +53,6 @@ class Contact_us extends My_Controller {
 		if ($this->input->post('submit')) {
 
 			$this->form_validation->set_rules('contact_pageDesc', 'Description', 'trim|required');
-			$this->form_validation->set_rules('contact_pageAddress', 'Address', 'trim|required');
 			$this->form_validation->set_rules('contact_pagePhone', 'Phone', 'trim|required');
 			$this->form_validation->set_rules('contact_pageEmail', 'Email', 'trim|required');
 
@@ -69,8 +68,6 @@ class Contact_us extends My_Controller {
 				if (isset($_POST) && !empty($_POST)) {
 
 					$params = array(
-
-						'contact_pageAddress' => $_POST['contact_pageAddress'],
 						'contact_pagePhone' => $_POST['contact_pagePhone'],
 						'contact_pageEmail' => $_POST['contact_pageEmail'],
 						'contact_pageDesc' => $_POST['contact_pageDesc'],

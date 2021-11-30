@@ -712,3 +712,110 @@ function galleryPageTabing($galleryID) {
 	// echo $htmlContent;die();
 	return $htmlContent;
 }
+
+function goalPagelisting() {
+	$htmlContent = '';
+	$data = array();
+	$CI = get_instance();
+	$CI->load->model('Common_model');
+	$goalsData = $CI->Common_model->getRecords('fx_goals', array('status' => 0), '', array('goalsNumber' => 'ASC'));
+
+	if (Count($goalsData) > 0) {
+		$cnt = 0;
+		foreach ($goalsData as $key => $value) {
+			$htmlContent .= '<li>
+            <div class="ap__goalWrp col-100 floatLft">
+               <img src="' . base_url() . 'uploads/goals/' . $value['goalsdetailImage'] . '" alt="">
+               <div class="ap__goalContents absolute animated animatedFadeInUp fadeInUp">
+                  <a href="#np-goalText' . $value['goalsNumber'] . '" class="np-goalPop" data-effect="mfp-zoom-in" data-effect="mfp-zoom-in">
+                     <h2 class="ap__goalTitle" >
+                     <h2 class="ap__goalTitle">Goal ' . $value['goalsNumber'] . ': ' . $value['goalsName'] . '</h2>
+                  </a>
+                  <p class="ap__common__para np__common__para mfp-with-anim mfp-hide" id="np-goalText' . $value['goalsNumber'] . '">
+                     <span class="Goal-1">Goal ' . $value['goalsNumber'] . ': ' . $value['goalsName'] . '</span>
+                    		' . strip_tags($value['goalsShortDesc']) . '
+                  </p>
+               </div>
+            </div>
+         </li>';
+			$cnt++;
+		}
+		$status = 'success';
+		$data['content'] = $htmlContent;
+		$data['count'] = $cnt;
+	} else {
+		$status = 'error';
+		$htmlContent = '<li class="messageList">No Images Available</li>';
+	}
+	$data['status'] = $status;
+	$data['content'] = $htmlContent;
+	return $htmlContent;
+}
+
+function eventPagelisting() {
+	$htmlContent = '';
+	$data = array();
+	$CI = get_instance();
+	$CI->load->model('Common_model');
+	$eventData = $CI->Common_model->getRecords('fx_event', array('status' => 0));
+
+	if (Count($eventData) > 0) {
+		$cnt = 0;
+		foreach ($eventData as $key => $value) {
+			$htmlContent .= '<li>
+            <div class="ap__campaignWrp ap__camp__1 col-100 floatLft flexDisplay flexColumn textLeft">
+               <div class="ap__innerSpace col-100 floatLft"></div>
+               <div class="ap__campaignData floatLft">
+                  <h2 class="ap__campaignHead ap__common__heading">' . $value['eventName'] . '</h2>
+                  <p class="ap__common__para">' . strip_tags($value['eventshortDesc']) . '.</p>
+                  <a href="' . base_url() . 'event/' . $value['seoUri'] . '" class="ap__takeAction">TAKE ACTION <span><img src="<?php echo base_url(); ?> /uploads/event/' . $value['eventThumbImage'] . '" alt=""></span></a>
+               </div>
+            </div>
+         </li>';
+			$cnt++;
+		}
+		$status = 'success';
+		$data['content'] = $htmlContent;
+		$data['count'] = $cnt;
+	} else {
+		$status = 'error';
+		$htmlContent = '<li class="messageList">No Images Available</li>';
+	}
+	$data['status'] = $status;
+	$data['content'] = $htmlContent;
+	return $htmlContent;
+}
+
+function campaignPagelisting() {
+	$htmlContent = '';
+	$data = array();
+	$CI = get_instance();
+	$CI->load->model('Common_model');
+	$campaignData = $CI->Common_model->getRecords('fx_campaign', array('status' => 0));
+
+	if (Count($campaignData) > 0) {
+		$cnt = 0;
+		foreach ($campaignData as $key => $value) {
+			$htmlContent .= '<li>
+            <div class="ap__campaignWrp ap__camp__1 col-100 floatLft flexDisplay flexColumn textLeft">
+               <div class="ap__innerSpace col-100 floatLft"></div>
+               <div class="ap__campaignData floatLft">
+                  <h2 class="ap__campaignHead ap__common__heading">' . $value['campaignName'] . '</h2>
+                  <p class="ap__common__para">' . strip_tags($value['campaignshortDesc']) . '.</p>
+                  <a href="' . base_url() . 'campaign/' . $value['seoUri'] . '" class="ap__takeAction">TAKE ACTION <span><img src="<?php echo base_url(); ?> /uploads/campaign/' . $value['campaignThumbImage'] . '" alt=""></span></a>
+               </div>
+            </div>
+         </li>';
+			$cnt++;
+		}
+		$status = 'success';
+		$data['content'] = $htmlContent;
+		$data['count'] = $cnt;
+	} else {
+		$status = 'error';
+		$htmlContent = '<li class="messageList">No Images Available</li>';
+	}
+	$data['status'] = $status;
+	$data['content'] = $htmlContent;
+	return $htmlContent;
+}

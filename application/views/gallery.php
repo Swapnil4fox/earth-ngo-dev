@@ -23,10 +23,12 @@
                         <li class="current">
                            <a class="current" rel="all" href="javascript:;">ALL</a>
                         </li>
+                        <?php foreach ($Gallery_category as $value) {?>
                         <li>
-                           <a rel="campaign" href="javascript:;">CAMPAIGN</a>
+                           <a rel="<?php echo $value['galleryCategory']; ?>" href="javascript:;"><?php echo $value['galleryCategory']; ?></a>
                         </li>
-                        <li>
+                     <?php }?>
+                        <!-- <li>
                            <a rel="advocation" href="javascript:;">ADVOCATION</a>
                         </li>
                         <li>
@@ -34,106 +36,29 @@
                         </li>
                         <li>
                            <a rel="test" href="javascript:;">Test</a>
-                        </li>
+                        </li> -->
                      </ul>
                   </div>
                </div>
             </div>
             <div class="np-gallary__tabContant col-100 floatLft current" id="all">
                <ul class="np-gallary__tabContant--list  col-100 floatLft">
+                  <?php foreach ($All as $key => $value) {?>
                   <li>
                      <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/children-and-education-teacher-reading-book-to-young-students.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/children-and-education-teacher-reading-book-to-young-students.jpg" alt="">
+                        <a class="image-popup" href="<?php echo base_url(); ?>uploads/gallery/<?php echo $value['galleryImage']; ?>">
+                        <img src="<?php echo base_url(); ?>uploads/gallery/<?php echo $value['galleryImage']; ?>" alt="">
                         </a>
                      </div>
                   </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/group-of-school-children-with-teacher-on-field-trip-in-nature.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/group-of-school-children-with-teacher-on-field-trip-in-nature.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/support-in-color.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/support-in-color.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/woman-speaking-the-speech.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/woman-speaking-the-speech.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/young-volunteers-planting-trees-in-green-park-together.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/young-volunteers-planting-trees-in-green-park-together.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a href="<?php echo base_url(); ?>front/images/np-img/young-volunteers-with-green-recycling-boxes-for-trash-standing-in-park.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/young-volunteers-with-green-recycling-boxes-for-trash-standing-in-park.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
+               <?php }?>
                </ul>
             </div>
-            <div class="np-gallary__tabContant col-100 floatLft" id="campaign">
-               <ul class="np-gallary__tabContant--list  col-100 floatLft">
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/children-and-education-teacher-reading-book-to-young-students.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/children-and-education-teacher-reading-book-to-young-students.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a href="<?php echo base_url(); ?>front/images/np-img/young-volunteers-with-green-recycling-boxes-for-trash-standing-in-park.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/young-volunteers-with-green-recycling-boxes-for-trash-standing-in-park.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/group-of-school-children-with-teacher-on-field-trip-in-nature.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/group-of-school-children-with-teacher-on-field-trip-in-nature.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/woman-speaking-the-speech.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/woman-speaking-the-speech.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/young-volunteers-planting-trees-in-green-park-together.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/young-volunteers-planting-trees-in-green-park-together.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-                  <li>
-                     <div class="image-popupContent">
-                        <a class="image-popup" href="<?php echo base_url(); ?>front/images/np-img/support-in-color.jpg">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/support-in-color.jpg" alt="">
-                        </a>
-                     </div>
-                  </li>
-               </ul>
+             <?php foreach ($Gallery_category as $value) {?>
+            <div class="np-gallary__tabContant col-100 floatLft" id="<?php echo $value['galleryCategory']; ?>">
+               <?php echo galleryPageTabing($value['galleryID']); ?>
             </div>
-
-
-
+         <?php }?>
          </div>
       </div>
    </section>
@@ -155,52 +80,19 @@
                <div class="np-bannerSec__title np__title--1 textCenter col-100 floatLft relative">
                   <span class="ap__common__heading np-gallary__heading col-100 floatLft relative">Collaborated Partner</span>
                   <p class="np-gallary__disc col-100 floatLft relative ">
-                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati suscipit animi aperiam a dignissimos, non cumque cum accusamus facilis unde laborum assumenda distinctio facere dolores, voluptates, beatae inventore ad asperiores!
+                     <?php echo strip_tags($Collab['collabSecDesc']); ?>
                   </p>
                </div>
             </div>
             <div class="np-partner__slider col-100 floatLft relative">
                <ul class="np-partner__slid col-100 floatLft relative">
+                  <?php foreach ($CollabImages as $value) {?>
                   <li>
                      <div class="ap__goalWrp col-100 floatLft">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/partner-1.png" alt="">
+                        <img src="<?php echo base_url(); ?>uploads/gallery/collaborated/<?php echo $value['collabSecSliderImg']; ?>" alt="">
                      </div>
                   </li>
-                  <li>
-                     <div class="ap__goalWrp col-100 floatLft">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/partner-3.png" alt="">
-                     </div>
-                  </li>
-                  <li>
-                     <div class="ap__goalWrp col-100 floatLft">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/partner-4.png" alt="">
-                     </div>
-                  </li>
-                  <li>
-                     <div class="ap__goalWrp col-100 floatLft">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/partner-5.png" alt="">
-                     </div>
-                  </li>
-                  <li>
-                     <div class="ap__goalWrp col-100 floatLft">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/partner-1.png" alt="">
-                     </div>
-                  </li>
-                  <li>
-                     <div class="ap__goalWrp col-100 floatLft">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/partner-3.png" alt="">
-                     </div>
-                  </li>
-                  <li>
-                     <div class="ap__goalWrp col-100 floatLft">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/partner-4.png" alt="">
-                     </div>
-                  </li>
-                  <li>
-                     <div class="ap__goalWrp col-100 floatLft">
-                        <img src="<?php echo base_url(); ?>front/images/np-img/partner-5.png" alt="">
-                     </div>
-                  </li>
+                  <?php }?>
                </ul>
             </div>
          </div>

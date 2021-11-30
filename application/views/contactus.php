@@ -16,28 +16,22 @@
                <div class="np-contentSec--lft col-100 floatLft">
                   <div class="np-contentSec--lftWrp col-100 floatLft">
                      <p class="ap__common__heading mar--b">Get In Touch</p>
-                     <p class="np-disc mar--b">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam dignissimos ipsa voluptatum delectus nihil accusantium quo illum nemo impedit eaque assumenda, beatae, modi, eos sint aut? Labore possimus praesentium qui?</p>
-                     <!-- <div class="np-contentSec--inner col-100 floatLft flexDisplay justifySpace"> -->
+                     <p class="np-disc mar--b"><?php echo strip_tags($Contact['contact_pageDesc']); ?></p>
                      <div class="np-contentSec--innerLft col-100 floatLft">
                         <div class="np-contentSec--innerLftWrp col-100 floatLft">
-                           <p class="ap__common__heading np-small__heading mar--b">Office, Renon</p>
+                           <p class="ap__common__heading np-small__heading mar--b">Office</p>
                            <ul>
-                              <li>
-                                 <div class="np-contentSec--add paa-b col-100 floatLft flexDisplay alignStart">
-                                    <div class="ap__footIco"><img src="<?php echo base_url(); ?>front/images/map.png" alt=""></div>
-                                    <p class="np-address gry">301, 3rd Floor,Tirupati Co-operative Housing Society Ltd, Opp. Mumbai University Main Gate, Vidyanagari Marg, (CST Road), Kalina, Santacruz (East), Mumbai - 400 098.</p>
-                                 </div>
-                              </li>
                               <li>
                                  <div class="np-contentSec--ph paa-b mar-t col-100 floatLft flexDisplay alignStart">
                                     <div class="ap__footIco"><img src="<?php echo base_url(); ?>front/images/call.png" alt=""></div>
-                                    <p class="np-ph gry">+91 84969 84969</p>
+                                    <a class="np-ph gry"
+                                       href="tel:+91<?php echo $Contact['contact_pagePhone']; ?>">+91 <?php echo $Contact['contact_pagePhone']; ?></a>
                                  </div>
                               </li>
                               <li>
                                  <div class="np-contentSec--mai mar-t col-100 floatLft flexDisplay alignStart">
                                     <div class="ap__footIco"><img src="<?php echo base_url(); ?>front/images/email-small.png" alt=""></div>
-                                    <p class="np-mai gry">connect@earthngo.org</p>
+                                    <a class="np-mai gry" href="mailto:<?php echo $Contact['contact_pageEmail']; ?>"><?php echo $Contact['contact_pageEmail']; ?></a>
                                  </div>
                               </li>
                            </ul>

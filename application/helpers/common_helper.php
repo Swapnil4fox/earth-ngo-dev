@@ -677,3 +677,38 @@ function CampaignHomePageSlider() {
 	$data['content'] = $htmlContent;
 	return $htmlContent;
 }
+
+function galleryPageTabing($galleryID) {
+	$htmlContent = '';
+	$data = array();
+	$CI = get_instance();
+	$CI->load->model('Common_model');
+	$multiImagesData = $CI->Common_model->getRecords('fx_gallery_images', array('galleryID' => $galleryID));
+
+	if (Count($multiImagesData) > 0) {
+		$cnt = 0;
+		$htmlContent .= '<ul class="np-gallary__tabContant--list  col-100 floatLft">';
+		foreach ($multiImagesData as $key => $value) {
+			$htmlContent .= '<li>
+                     <div class="image-popupContent">
+                        <a class="image-popup" href="' . base_url() . 'uploads/gallery/' . $value['galleryImage'] . '">
+                        <img src="' . base_url() . 'uploads/gallery/' . $value['galleryImage'] . '" alt="">
+                        </a>
+                     </div>
+                  </li>';
+			$cnt++;
+		}
+		$htmlContent .= '</ul>';
+		$status = 'success';
+		$data['content'] = $htmlContent;
+		$data['count'] = $cnt;
+
+	} else {
+		$status = 'error';
+		$htmlContent = '<li class="messageList">No Images Available</li>';
+	}
+	$data['status'] = $status;
+	$data['content'] = $htmlContent;
+	// echo $htmlContent;die();
+	return $htmlContent;
+}

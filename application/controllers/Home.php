@@ -29,8 +29,11 @@ class Home extends CI_Controller {
 		$this->load->view('footer.php');
 	}
 	public function contact_us() {
+
+		$page_data['Contact'] = $this->Common_model->getRow(' fx_contact_page', array('contact_pageID  ' => 1));
+
 		$this->load->view('header.php');
-		$this->load->view('contactus.php');
+		$this->load->view('contactus.php', $page_data);
 		$this->load->view('footer.php');
 	}
 	public function corporate_partnership() {
@@ -50,7 +53,10 @@ class Home extends CI_Controller {
 	}
 	public function gallery_page() {
 
-		$page_data['Gallery'] = $this->Common_model->getRecords(' fx_gallery', array('status' => 0));
+		$page_data['Gallery_category'] = $this->Common_model->getRecords(' fx_gallery', array('status' => 0));
+		$page_data['All'] = $this->Common_model->getRecords(' fx_gallery_images', array());
+		$page_data['Collab'] = $this->Common_model->getRow('fx_collaborated_sec', array('collabSecID ' => 1));
+		$page_data['CollabImages'] = $this->Common_model->getRecords('fx_collabsec_images', array('collabSecID ' => 1));
 
 		$this->load->view('header.php');
 		$this->load->view('gallery.php', $page_data);

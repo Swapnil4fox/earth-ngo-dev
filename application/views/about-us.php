@@ -11,7 +11,7 @@
 <section class="ap__section__1 commonMar ap__movementSect col-100 floatLft flexDisplay justifyCenter">
    <div class="wrapper">
       <h1 class="ap__common__heading col-100 floatLft textCenter"><?php echo $About['aboutTitle']; ?></h1>
-      <p class="ap__common__para col-100 floatLft textCenter"><?php echo strip_tags($About['aboutDesc']); ?></p>
+      <p class="ap__common__para col-100 floatLft textCenter"><?php echo $About['aboutDesc']; ?>
    </div>
 </section>
 <section class="ap_section__2 commonMar col-100 floatLft flexDisplay justifyCenter">
@@ -105,7 +105,7 @@
          <h2 class="ap__common__heading orange-color col-100 floatLft">Become Our Volunteer</h2>
          <p class="ap__common__para ap__whtPara col-100 floatLft">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget <br> dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</p>
          <div class="ap__joinDiv col-100 floatLft">
-            <a href="javascript:;" class="ap__joinClick ap__common_button inlineBlk">JOIN VOLUNTEER</a>
+            <a href="<?php echo base_url('volunteer'); ?>" class="ap__joinClick ap__common_button inlineBlk">JOIN VOLUNTEER</a>
          </div>
       </div>
    </div>

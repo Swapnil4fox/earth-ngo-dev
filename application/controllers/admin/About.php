@@ -101,7 +101,7 @@ class About extends My_Controller {
 
 						'aboutmisionDesc' => $_POST['aboutmisionDesc'],
 
-						'aboutDesc' => $_POST['aboutDesc'],
+						'aboutDesc' => preg_replace("/^<p.*?>/", "", $_POST['aboutDesc']),
 
 						'dateModified' => date('Y-m-d h:i:s'),
 

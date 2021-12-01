@@ -49,7 +49,6 @@
                                 <th width="50"><?=trans('id')?></th>
                                 <th><?=trans('desktop_image')?></th>
                                 <th><?=trans('mobile_image')?></th>
-                                <th><?=trans('title')?></th>
                                 <th width="120"><?=trans('action')?></th>
                             </tr>
                         </thead>
@@ -65,9 +64,6 @@
                                 </td>
                                 <td>
                                     <h4 class="m0 mb5"><img src="<?php echo base_url('uploads/banner/' . $row['bannerMobImage']); ?>" width="100" height="100" class="img-responsive"/></h4>
-                                </td>
-                                <td>
-                                    <?=$row['bannerTitle']?>
                                 </td>
                                 <td>
                                     <a href="<?=base_url("admin/banner/view/" . $row['bannerID']);?>"><i class="feather icon-eye"></i></a>

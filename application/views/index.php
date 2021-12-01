@@ -1,31 +1,19 @@
 <section class="ap__hompage__banner ap__m0 col-100 floatLft relative">
    <div class="ap__banner__slider col-100 floatLft">
-      <div class="ap__banner__image ap__banner__1 relative">
-         <img src="<?php echo base_url(); ?>front/images/young-volunteers-planting-trees-in-green-park-together.jpg" class="ap__desk__banner" alt="" />
-         <img src="<?php echo base_url(); ?>front/images/img-01.jpg" class="ap__mob__banner" alt="" />
-      </div>
-      <div class="ap__banner__image ap__banner__1 relative">
-         <img src="<?php echo base_url(); ?>front/images/young-volunteers-planting-trees-in-green-park-together.jpg" class="ap__desk__banner" alt="" />
-         <img src="<?php echo base_url(); ?>front/images/img-02.jpg" class="ap__mob__banner" alt="" />
-      </div>
-      <div class="ap__banner__image ap__banner__1 relative">
-         <img src="<?php echo base_url(); ?>front/images/young-volunteers-planting-trees-in-green-park-together.jpg" class="ap__desk__banner" alt="" />
-         <img src="<?php echo base_url(); ?>front/images/img-03.jpg" class="ap__mob__banner" alt="" />
-      </div>
+      <?php echo HomePageBannerSlider(); ?>
    </div>
    <div class="ap__bannerContent absolute">
       <div class="ap__contentWrp col-100 floatLft textCenter">
-         <h2 class="ap__bannerTitle ap__common__heading ap__bigFnt">Save The Planet.</h2>
-         <h2 class="ap__bannerTitle ap__common__heading ap__bigFnt"><span>Reduce</span> The Plastic</h2>
-         <p class="ap__bannerPara ap__common__para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit <br> tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
-         <a href="javascript:;" class="ap__common_button">JOIN CAMPAIGN</a>
+         <h2 class="ap__bannerTitle ap__common__heading ap__bigFnt"><?php echo $Content['bannerTitle']; ?></h2>
+         <p class="ap__bannerPara ap__common__para"><?php echo $Content['bannerDesc']; ?>
+         <a href="javascript:;" class="ap__common_button">READ MORE</a>
       </div>
    </div>
 </section>
 <section class="ap__section__1 commonMar ap__movementSect col-100 floatLft flexDisplay justifyCenter">
    <div class="wrapper">
       <h1 class="ap__common__heading col-100 floatLft textCenter"><?php echo $Section1['section1Title']; ?></h1>
-      <p class="ap__common__para col-100 floatLft textCenter"><?php echo strip_tags($Section1['section1Desc']); ?></p>
+      <p class="ap__common__para col-100 floatLft textCenter"><?php echo $Section1['section1Desc']; ?>
       <ul class="ap__cardsList col-100 floatLft flexDisplay justifySpace alignStart flexWrap">
          <li class="ap__cardWrp">
             <div class="ap__cardItem col-100 floatLft">
@@ -181,7 +169,7 @@
          <h2 class="ap__common__heading orange-color col-100 floatLft">Become Our Volunteer</h2>
          <p class="ap__common__para ap__whtPara col-100 floatLft">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget <br> dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient.</p>
          <div class="ap__joinDiv col-100 floatLft">
-            <a href="javascript:;" class="ap__joinClick ap__common_button inlineBlk">JOIN VOLUNTEER</a>
+            <a href="<?php echo base_url('volunteer'); ?>" class="ap__joinClick ap__common_button inlineBlk">JOIN VOLUNTEER</a>
          </div>
       </div>
    </div>

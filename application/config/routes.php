@@ -65,3 +65,6 @@ $route['events'] = 'home/events_listing';
 $route['gallery'] = 'home/gallery_page';
 $route['sustainable-goals'] = 'home/sustainable_goals';
 $route['volunteer'] = 'home/volunteer_page';
+
+$route['event/(:any)'] = 'event';
+$route['campaign/(:any)'] = 'campaign';

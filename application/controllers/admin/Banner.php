@@ -22,39 +22,36 @@ class Banner extends My_Controller {
 
 	function add_edit() {
 
-		//$this->rbac->check_operation_access(); // check opration permission
 		$this->load->library('form_validation');
 		$page_data = array();
 		if ($this->input->post('submit')) {
 
-			$this->form_validation->set_rules('bannerTitle', 'Title', 'trim|required');
-			$this->form_validation->set_rules('bannerDesc', 'Description', 'trim|required');
-			if ($_POST['bannerID'] == 0) {
+			//echo "<pre>";
+			//print_r($_POST);die();
+			$bannerID = $_POST['bannerID'];
+			if ($bannerID == 0) {
 				$this->form_validation->set_rules('bannerMobImage', 'Mobile Image', 'callback_file_check');
 				$this->form_validation->set_rules('bannerDeskImage', 'Desktop Image', 'callback_file_check1');
-			}
 
-			if ($this->form_validation->run() == FALSE) {
-				$data = array(
-					'errors' => validation_errors(),
-				);
-				$this->session->set_flashdata('errors', $data['errors']);
-				$bannerID = $_POST['bannerID'];
-				if ($_POST['bannerID'] > 0) {
-					redirect(base_url('admin/banner/add_edit/' . $bannerID . ''), 'refresh');
-				} else {
-					redirect(base_url('admin/banner/add_edit'), 'refresh');
+				if ($this->form_validation->run() == FALSE) {
+					$data = array(
+						'errors' => validation_errors(),
+					);
+					$this->session->set_flashdata('errors', $data['errors']);
+					$bannerID = $_POST['bannerID'];
+					if ($_POST['bannerID'] > 0) {
+						redirect(base_url('admin/banner/add_edit/' . $bannerID . ''), 'refresh');
+					} else {
+						redirect(base_url('admin/banner/add_edit'), 'refresh');
+					}
 				}
-
 			} else {
 				if (isset($_POST) && !empty($_POST)) {
+
 					$config = array(
 						'upload_path' => 'uploads/banner/',
-
 						'allowed_types' => 'jpg|jpeg|gif|png',
-
 						'file_name' => rand(1, 9999),
-
 						'max_size' => 0,
 
 					);
@@ -91,19 +88,10 @@ class Banner extends My_Controller {
 					}
 
 					$params = array(
-
 						'bannerDeskImage' => $_POST['bannerDeskImage'],
-
 						'bannerMobImage' => $_POST['bannerMobImage'],
-
-						'bannerTitle' => $_POST['bannerTitle'],
-
-						'bannerDesc' => $_POST['bannerDesc'],
-
 						'dateAdded' => date('Y-m-d h:i:s'),
-
 						'dateModified' => date('Y-m-d h:i:s'),
-
 					);
 
 					$bannerID = $_POST['bannerID'];
@@ -179,6 +167,58 @@ class Banner extends My_Controller {
 		redirect(base_url('admin/banner'));
 	}
 
+	public function banner_content_edit() {
+		$this->load->library('form_validation');
+		$page_data = array();
+		if ($this->input->post('submit')) {
+			$this->form_validation->set_rules('bannerTitle', 'Title', 'trim|required');
+			$this->form_validation->set_rules('bannerDesc', 'Description', 'trim|required');
+			if ($this->form_validation->run() == FALSE) {
+				$data = array(
+					'errors' => validation_errors(),
+				);
+				$this->session->set_flashdata('errors', $data['errors']);
+				$contentID = $_POST['contentID'];
+				if ($_POST['contentID'] > 0) {
+					redirect(base_url('admin/banner/banner_content_edit/' . $contentID . ''), 'refresh');
+				} else {
+					redirect(base_url('admin/banner/banner_content_edit'), 'refresh');
+				}
+
+			} else {
+				if (isset($_POST) && !empty($_POST)) {
+
+					$params = array(
+						'bannerTitle' => $_POST['bannerTitle'],
+						'bannerDesc' => preg_replace("/^<p.*?>/", "", $_POST['bannerDesc']),
+						'bannerlink' => $_POST['bannerlink'],
+						'dateModified' => date('Y-m-d h:i:s'),
+					);
+
+					$contentID = $_POST['contentID'];
+					if ($_POST['contentID'] > 0) {
+						$where = ['contentID' => $contentID];
+						$insert = $this->Common_model->updateRecord('fx_banner_content', $params, $where);
+						if ($insert) {
+							$this->session->set_flashdata('success', 'Content Updated successfully!');
+							redirect(base_url('admin/banner/banner_content_edit'));
+						}
+					}
+				} else {
+					$this->session->set_flashdata('errors', 'Something is Wrong!!');
+					redirect(base_url('admin/banner/banner_content_edit'), 'refresh');
+				}
+			}
+		} else {
+
+			$page_data['Fetch_data'] = $this->Common_model->getRow('fx_banner_content', array('contentID' => 1));
+
+			$this->load->view('admin/includes/_header');
+			$this->load->view('admin/home/banner_content_edit', $page_data);
+			$this->load->view('admin/includes/_footer');
+		}
+
+	}
 	public function section1_edit() {
 
 		$this->load->library('form_validation');
@@ -272,7 +312,7 @@ class Banner extends My_Controller {
 					$params = array(
 
 						'section1Title' => $_POST['section1Title'],
-						'section1Desc' => $_POST['section1Desc'],
+						'section1Desc' => preg_replace("/^<p.*?>/", "", $_POST['section1Desc']),
 
 						'icon1Image' => $_POST['icon1Image'],
 						'icon2Image' => $_POST['icon2Image'],

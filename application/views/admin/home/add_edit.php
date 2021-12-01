@@ -82,14 +82,7 @@ $(document).ready(function(e) {
                <?php $this->load->view('admin/includes/_messages.php')?>
                <?php echo form_open_multipart(base_url('admin/banner/add_edit'), 'class="form-horizontal"'); ?>
                <div class="form-group">
-                  <label for="title"><span class="text-danger">*</span><?=trans('title')?></label>
-                  <input type="text" autocomplete="off" name="bannerTitle" class="form-control" id="bannerTitle" value="<?php echo isset($Fetch_data['bannerTitle']) ? set_value("bannerTitle", $Fetch_data['bannerTitle']) : set_value("bannerTitle"); ?>" placeholder="">
                   <input type="hidden" name="bannerID" id="bannerID" value="<?php echo isset($Fetch_data['bannerID']) ? set_value("bannerID", $Fetch_data['bannerID']) : set_value("bannerID"); ?>">
-               </div>
-               <div class="form-group">
-                  <label for="description"><span class="text-danger">*</span>Description</label>
-                  <textarea name="bannerDesc" id="bannerDesc"><?php echo isset($Fetch_data['bannerDesc']) ? set_value("bannerDesc", $Fetch_data['bannerDesc']) : set_value("bannerDesc"); ?></textarea>
-                  <span id="pageSynopsis_validate" class="text-danger"></span>
                </div>
                <div class="form-group">
                   <label for="bannerMobImage"><span class="text-danger">*</span>Mobile Banner </label>
@@ -119,8 +112,3 @@ $(document).ready(function(e) {
       </div>
    </div>
 </div>
-<script>
-    $(document).ready(function() {
-        CKEDITOR.replace( 'bannerDesc' );
-    });
-</script>

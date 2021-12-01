@@ -5,6 +5,7 @@ class Home extends CI_Controller {
 
 	public function index() {
 
+		$page_data['Content'] = $this->Common_model->getRow('fx_banner_content', array('contentID ' => 1));
 		$page_data['Section1'] = $this->Common_model->getRow('fx_section1', array('section1ID' => 1));
 		$page_data['Section2'] = $this->Common_model->getRow('fx_section2', array('section2ID' => 1));
 		$page_data['Section3'] = $this->Common_model->getRow('fx_section3', array('section3ID' => 1));

@@ -11,7 +11,7 @@
 <section class="ap__campaignWrap commonMar col-100 floatLft relative flexDisplay justifyCenter">
    <div class="wrapper">
       <div class="ap__innerCampaignWrp col-100 floatLft flexDisplay justifySpace alignStart flexWrap">
-         <div class="ap__campaignText">
+         <!-- <div class="ap__campaignText">
             <h2 class="ap__common__heading">Plant More Tree For The Earth</h2>
             <p class="ap__common__para">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <h3 class="ap__common__small">Summary</h3>
@@ -47,10 +47,11 @@
                <div class="ap__commentQuote"><img src="<?php echo base_url(); ?>front/images/quote.png" alt=""></div>
             </div>
             <p class="ap__common__para col-100 floatLft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-         </div>
+         </div> -->
+         <?php echo $events_details['eventLongDesc']; ?>
          <div class="ap__campaignBrief">
             <div class="ap__campaignImgWrp col-100 floatLft">
-               <img src="<?php echo base_url(); ?>front/images/campaign-image.jpg" alt="">
+               <img src="<?php echo base_url(); ?>uploads/event/<?php echo $events_details['eventdetailImage']; ?>" alt="">
             </div>
             <div class="ap__campaignDonate col-100 floatLft">
                <p class="ap__common__para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
@@ -62,32 +63,26 @@
             <div class="ap__shareDiv col-100 floatLft">
                <span>Share This:</span>
                <div class="ap__socialDiv col-100 floatLft">
-                  <a href="javascript:;"><i class="fa fa-facebook-f"></i></a>
-                  <a href="javascript:;"><i class="fa fa-twitter"></i></a>
-                  <a href="javascript:;"><i class="fa fa-instagram"></i></a>
-                  <a href="javascript:;"><i class="fa fa-linkedin"></i></a>
+                  <a href="<?php echo $events_details['eventFBLink']; ?>" target="_blank"><i class="fa fa-facebook-f"></i></a>
+                  <a href="<?php echo $events_details['eventTwitterLink']; ?>" target="_blank"><i class="fa fa-twitter"></i></a>
+                  <a href="<?php echo $events_details['eventInstaLink']; ?>" target="_blank"><i class="fa fa-instagram"></i></a>
+                  <a href="<?php echo $events_details['eventLinkdinLink']; ?>" target="_blank"><i class="fa fa-linkedin"></i></a>
                </div>
             </div>
             <div class="ap__otherCampaign col-100 floatLft">
                <h3 class="ap__common__small col-100 floatLft">Other Campaign</h3>
                <div class="ap__campaignBorder col-100 floatLft"></div>
                <ul class="ap__otherCampList col-100 floatLft">
+                  <?php foreach ($Similar as $value) {?>
                   <li class="col-100 floatLft flexDisplay justifySpace alignStart flexWrap">
-                     <div class="ap__campIco"><img src="<?php echo base_url(); ?>front/images/other-campaign-1.jpg" alt=""></div>
+                     <div class="ap__campIco"><img src="<?php echo base_url(); ?>uploads/event/<?php echo $value['eventThumbImage']; ?>" alt=""></div>
                      <div class="ap__otherCampInfo">
-                        <h3 class="ap__common__small col-100 floatLft">Green Energy</h3>
-                        <p class="ap__common__para">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <a href="javascript:;" class="ap__takeAction">TAKE ACTION <span><img src="<?php echo base_url(); ?>front/images/right-arrow-action.png" alt=""></span></a>
+                        <h3 class="ap__common__small col-100 floatLft"><?php echo $value['eventName']; ?></h3>
+                        <p class="ap__common__para"><?php echo strip_tags($value['eventshortDesc']); ?></p>
+                        <a href="<?php echo base_url(); ?>event/<?php echo $value['seoUri'] ?>" class="ap__takeAction">TAKE ACTION <span><img src="<?php echo base_url(); ?>front/images/right-arrow-action.png" alt=""></span></a>
                      </div>
                   </li>
-                  <li class="col-100 floatLft flexDisplay justifySpace alignStart flexWrap">
-                     <div class="ap__campIco"><img src="<?php echo base_url(); ?>front/images/other-campaign-1.jpg" alt=""></div>
-                     <div class="ap__otherCampInfo">
-                        <h3 class="ap__common__small col-100 floatLft">Sea Guardian</h3>
-                        <p class="ap__common__para">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <a href="javascript:;" class="ap__takeAction">TAKE ACTION <span><img src="<?php echo base_url(); ?>front/images/right-arrow-action.png" alt=""></span></a>
-                     </div>
-                  </li>
+               <?php }?>
                </ul>
             </div>
          </div>

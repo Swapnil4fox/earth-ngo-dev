@@ -535,6 +535,34 @@ function makeSeoUri($courseTitle) {
 	return $seoUri;
 
 }
+
+function HomePageBannerSlider() {
+	$htmlContent = '';
+	$data = array();
+	$CI = get_instance();
+	$CI->load->model('Common_model');
+	$bannerData = $CI->Common_model->getRecords('fx_home_banner', array('status' => 0));
+
+	if (Count($bannerData) > 0) {
+		$cnt = 0;
+		foreach ($bannerData as $key => $value) {
+			$htmlContent .= '<div class="ap__banner__image ap__banner__1 relative">
+         <img src="' . base_url() . 'uploads/banner/' . $value['bannerDeskImage'] . '" class="ap__desk__banner" alt="" />
+         <img src="' . base_url() . 'uploads/banner/' . $value['bannerMobImage'] . '" class="ap__mob__banner" alt="" />
+      </div>';
+			$cnt++;
+		}
+		$status = 'success';
+		$data['content'] = $htmlContent;
+		$data['count'] = $cnt;
+	} else {
+		$status = 'error';
+		$htmlContent = '<li class="messageList">No Images Available</li>';
+	}
+	$data['status'] = $status;
+	$data['content'] = $htmlContent;
+	return $htmlContent;
+}
 function makeVolunteertabing() {
 	$htmlContent = '';
 	$data = array();
@@ -654,12 +682,12 @@ function CampaignHomePageSlider() {
 		$cnt = 0;
 		foreach ($campaignData as $key => $value) {
 			$htmlContent .= '<li>
-            <div class="ap__campaignWrp ap__camp__1 col-100 floatLft flexDisplay flexColumn textLeft">
+            <div class="ap__campaignWrp col-100 floatLft flexDisplay flexColumn textLeft" style="background: url(' . base_url() . 'uploads/campaign/' . $value['campaignThumbImage'] . ')no-repeat center center/cover;" >
                <div class="ap__innerSpace col-100 floatLft"></div>
                <div class="ap__campaignData floatLft">
                   <h2 class="ap__campaignHead ap__common__heading">' . $value['campaignName'] . '</h2>
                   <p class="ap__common__para">' . strip_tags($value['campaignshortDesc']) . '</p>
-                  <a href="' . base_url() . 'campaign/' . $value['seoUri'] . '" class="ap__takeAction">TAKE ACTION<span><img src="<?php echo base_url(); ?> /uploads/campaign/' . $value['campaignThumbImage'] . '" alt=""></span></a>
+                  <a href="' . base_url() . 'campaign/' . $value['seoUri'] . '" class="ap__takeAction">TAKE ACTION<span><img src=" <?php echo base_uel(); ?>uploads/campaign/' . $value['campaignThumbImage'] . '" alt=""></span></a>
                </div>
             </div>
          </li>';
@@ -763,12 +791,12 @@ function eventPagelisting() {
 		$cnt = 0;
 		foreach ($eventData as $key => $value) {
 			$htmlContent .= '<li>
-            <div class="ap__campaignWrp ap__camp__1 col-100 floatLft flexDisplay flexColumn textLeft">
+            <div class="ap__campaignWrp col-100 floatLft flexDisplay flexColumn textLeft" style="background: url(' . base_url() . 'uploads/event/' . $value['eventThumbImage'] . ')no-repeat center center/cover;">
                <div class="ap__innerSpace col-100 floatLft"></div>
                <div class="ap__campaignData floatLft">
                   <h2 class="ap__campaignHead ap__common__heading">' . $value['eventName'] . '</h2>
                   <p class="ap__common__para">' . strip_tags($value['eventshortDesc']) . '.</p>
-                  <a href="' . base_url() . 'event/' . $value['seoUri'] . '" class="ap__takeAction">TAKE ACTION <span><img src="<?php echo base_url(); ?> /uploads/event/' . $value['eventThumbImage'] . '" alt=""></span></a>
+                  <a href="' . base_url() . 'event/' . $value['seoUri'] . '" class="ap__takeAction">TAKE ACTION <span><img src="<?php echo base_url(); ?>/uploads/event/' . $value['eventThumbImage'] . '" alt=""></span></a>
                </div>
             </div>
          </li>';
@@ -797,7 +825,7 @@ function campaignPagelisting() {
 		$cnt = 0;
 		foreach ($campaignData as $key => $value) {
 			$htmlContent .= '<li>
-            <div class="ap__campaignWrp ap__camp__1 col-100 floatLft flexDisplay flexColumn textLeft">
+            <div class="ap__campaignWrp col-100 floatLft flexDisplay flexColumn textLeft" style="background: url(' . base_url() . 'uploads/campaign/' . $value['campaignThumbImage'] . ')no-repeat center center/cover;">
                <div class="ap__innerSpace col-100 floatLft"></div>
                <div class="ap__campaignData floatLft">
                   <h2 class="ap__campaignHead ap__common__heading">' . $value['campaignName'] . '</h2>
